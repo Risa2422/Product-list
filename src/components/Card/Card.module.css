@@ -1,0 +1,9 @@
+.card_container {
+  /* background-color: blue; */
+}
+
+.card_image {
+  width: 200px;
+  height: 200px;
+  background-color: rgb(171, 168, 168);
+}
