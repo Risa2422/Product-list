@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import ItemInfo from "../ItemInfo/ItemInfo";
 import { MyContext } from "../../App";
+import styles from "./Cart.module.css";
 
 const Cart = () => {
   const { selectedItems } = useContext(MyContext);
@@ -11,7 +12,7 @@ const Cart = () => {
   });
 
   return (
-    <div>
+    <div className={styles.cart_container}>
       <h2>Your Cart({totalCount})</h2>
       <ItemInfo />
     </div>
