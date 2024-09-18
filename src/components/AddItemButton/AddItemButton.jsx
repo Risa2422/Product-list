@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { MyContext } from "../../App";
 
-const AddItemButton = ({ index, data, isInCart, setIsInCart }) => {
-  const { selectedItems, setSelectedItems } = useContext(MyContext);
+const AddItemButton = ({ index, data }) => {
+  const { selectedItems, setSelectedItems, isInCart, setIsInCart } =
+    useContext(MyContext);
 
   const addItem = (index) => {
     const obj = {
@@ -16,7 +17,10 @@ const AddItemButton = ({ index, data, isInCart, setIsInCart }) => {
     };
 
     setSelectedItems([...selectedItems, obj]);
-    setIsInCart((isInCart) => !isInCart);
+    setIsInCart((isInCart) => ({
+      ...isInCart,
+      [index]: true,
+    }));
   };
 
   return (

@@ -3,10 +3,18 @@ import OrderLists from "../OrderLists/OrderLists";
 import { MyContext } from "../../App";
 
 const ConfirmModal = () => {
-  const { selectedItems, setSelectedItems } = useContext(MyContext);
+  const { selectedItems, setSelectedItems, isInCart, setIsInCart } =
+    useContext(MyContext);
 
   const resetOrder = () => {
     setSelectedItems([]);
+    setIsInCart((isInCart) => {
+      let newObj = {};
+      for (const key in isInCart) {
+        newObj[key] = false;
+      }
+      return newObj;
+    });
   };
 
   return (

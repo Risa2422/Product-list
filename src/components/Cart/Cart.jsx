@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import ItemInfo from "../ItemInfo/ItemInfo";
-import ConfirmButton from "../ConfirmButton/ConfirmButton";
 import { MyContext } from "../../App";
 
 const Cart = () => {
@@ -15,10 +14,6 @@ const Cart = () => {
     <div>
       <h2>Your Cart({totalCount})</h2>
       <ItemInfo />
-      <div>
-        This is a <strong>carbon-neutral</strong> delivery
-      </div>
-      <ConfirmButton />
     </div>
   );
 };

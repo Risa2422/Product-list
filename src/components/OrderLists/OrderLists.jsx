@@ -2,11 +2,23 @@ import React, { useContext } from "react";
 import { MyContext } from "../../App";
 
 const OrderLists = ({ isConfirm }) => {
-  const { selectedItems, setSelectedItems } = useContext(MyContext);
+  const { selectedItems, setSelectedItems, isInCart, setIsInCart } =
+    useContext(MyContext);
   const orderTotal = selectedItems.reduce(
     (total, item) => total + item.price * item.count,
     0
   );
+
+  function deleteItem(id) {
+    const updatedItems = selectedItems.filter((item) => item.id !== id);
+    setSelectedItems(updatedItems);
+
+    setIsInCart((isInCart) => ({
+      ...isInCart,
+      [id]: false,
+    }));
+  }
+
   return (
     <>
       <ul>
@@ -26,9 +38,7 @@ const OrderLists = ({ isConfirm }) => {
       </ul>
       <div>
         <p>Order Total</p>
-        <p>
-          <p>${orderTotal}</p>
-        </p>
+        <p>${orderTotal}</p>
       </div>
     </>
   );

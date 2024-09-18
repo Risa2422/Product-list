@@ -2,8 +2,9 @@ import React, { useState, useContext } from "react";
 import { MyContext } from "../../App";
 import styles from "./ItemCountButton.module.css";
 
-const ItemCountButton = ({ index, isInCart, setIsInCart }) => {
-  const { selectedItems, setSelectedItems } = useContext(MyContext);
+const ItemCountButton = ({ index }) => {
+  const { selectedItems, setSelectedItems, isInCart, setIsInCart } =
+    useContext(MyContext);
 
   // count up the item
   const countUp = (index) => {
@@ -19,7 +20,10 @@ const ItemCountButton = ({ index, isInCart, setIsInCart }) => {
     // if the count goes zero, the text of the button will change.
     const currentCount = selectedItems.find((item) => item.id === index);
     if (currentCount.count === 1) {
-      setIsInCart((isInCart) => !isInCart);
+      setIsInCart((isInCart) => ({
+        ...isInCart,
+        [index]: false,
+      }));
     }
 
     const updatedItems = selectedItems
