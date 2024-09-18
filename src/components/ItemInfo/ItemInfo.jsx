@@ -12,7 +12,7 @@ const ItemInfo = () => {
   return (
     <div>
       {selectedItems.length === 0 ? (
-        <p>No items selected</p>
+        <p>Your added items will appear here</p>
       ) : (
         <ul>
           {selectedItems.map((item) => (
@@ -22,7 +22,6 @@ const ItemInfo = () => {
               <div>{item.count}x</div>
               <div>@${item.price}</div>
               <div>{item.total()}</div>
-              {/* <div>{item.total ? item.total() : "Total not available"}</div> */}
               <button onClick={() => deleteItem(item.id)}>削除</button>
             </li>
           ))}
