@@ -1,48 +1,34 @@
 import React, { useState, useContext } from "react";
-import styles from "./ItemCountButton.module.css";
 import { MyContext } from "../../App";
+import styles from "./ItemCountButton.module.css";
 
-const ItemCountButton = ({ index, data }) => {
-  const [isInCart, setIsInCart] = useState(false);
+const ItemCountButton = ({ index, isInCart, setIsInCart }) => {
   const [selectedItems, setSelectedItems] = useContext(MyContext);
 
-  const addItem = (index) => {
-    const obj = {
-      id: index,
-      name: data.name,
-      count: 1,
-      price: data.price,
-      total: function () {
-        return this.price * this.count;
-      },
-    };
-
-    setSelectedItems([...selectedItems, obj]);
-    setIsInCart((isInCart) => !isInCart);
-  };
-
+  // count up the item
   const countUp = (index) => {
-    const updateItem = selectedItems.map((item) => {
+    const updatedItems = selectedItems.map((item) => {
       return item.id === index ? { ...item, count: item.count + 1 } : item;
     });
 
-    setSelectedItems(updateItem);
+    setSelectedItems(updatedItems);
   };
 
+  // count down the item
   const countDown = (index) => {
+    // if the count goes zero, the text of the button will change.
+    const currentCount = selectedItems.find((item) => item.id === index);
+    if (currentCount.count === 1) {
+      setIsInCart((isInCart) => !isInCart);
+    }
+
     const updatedItems = selectedItems
       .map((item) =>
         item.id === index ? { ...item, count: item.count - 1 } : item
       )
       .filter((item) => item.count > 0);
-    setSelectedItems(updatedItems);
 
-    const test = selectedItems.filter((item) => {
-      return item.id === index;
-    });
-    if (test.count < 0) {
-      setIsInCart((isInCart) => !isInCart);
-    }
+    setSelectedItems(updatedItems);
   };
 
   return (

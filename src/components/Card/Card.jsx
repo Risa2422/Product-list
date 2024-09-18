@@ -1,23 +1,32 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./Card.module.css";
-import { MyContext } from "../../App";
 import ItemCountButton from "../ItemCountButton/ItemCountButton";
+import AddItemButton from "../AddItemButton/AddItemButton";
 
 const Card = ({ index, data }) => {
+  const [isInCart, setIsInCart] = useState(false);
+
   return (
     <div className={styles.card_container}>
       <div className={styles.card_image}>
         <div>
+          {/* images doesn't apply */}
           <img src="../assets/images/image-baklava-desktop.jpg" alt="" />
         </div>
-        {/* <button
-          className={styles.card_add_button}
-          onClick={() => addCount(index)}
-        >
-          Add to Cart
-        </button> */}
-
-        <ItemCountButton index={index} data={data} />
+        {isInCart ? (
+          <ItemCountButton
+            index={index}
+            isInCart={isInCart}
+            setIsInCart={setIsInCart}
+          />
+        ) : (
+          <AddItemButton
+            index={index}
+            data={data}
+            isInCart={isInCart}
+            setIsInCart={setIsInCart}
+          />
+        )}
       </div>
       <div>
         <div>{data.category}</div>
