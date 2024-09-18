@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import ConfirmModal from "../ConfirmModal/ConfirmModal";
 
 const ConfirmButton = () => {
-  return <div>ConfirmButton</div>;
+  const [showOrderLists, setShowOrderLists] = useState(false);
+
+  const handleClick = () => {
+    setShowOrderLists(true);
+  };
+
+  return (
+    <>
+      <button onClick={handleClick}>Confirm</button>
+      {showOrderLists && <ConfirmModal />}
+    </>
+  );
 };
 
 export default ConfirmButton;
