@@ -4,19 +4,21 @@ import ConfirmButton from "../ConfirmButton/ConfirmButton";
 import { MyContext } from "../../App";
 
 const Cart = () => {
-  const selectedItems = useContext(MyContext);
+  const { selectedItems } = useContext(MyContext);
   let totalCount = 0;
 
-  selectedItems[0].map((item) => {
-    return (totalCount = totalCount + item.count);
+  selectedItems.forEach((item) => {
+    totalCount += item.count;
   });
 
   return (
     <div>
       <h2>Your Cart({totalCount})</h2>
       <ItemInfo />
+      <div>
+        This is a <strong>carbon-neutral</strong> delivery
+      </div>
       <ConfirmButton />
-      <div>count</div>
     </div>
   );
 };

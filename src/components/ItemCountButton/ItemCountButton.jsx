@@ -3,7 +3,7 @@ import { MyContext } from "../../App";
 import styles from "./ItemCountButton.module.css";
 
 const ItemCountButton = ({ index, isInCart, setIsInCart }) => {
-  const [selectedItems, setSelectedItems] = useContext(MyContext);
+  const { selectedItems, setSelectedItems } = useContext(MyContext);
 
   // count up the item
   const countUp = (index) => {
@@ -32,17 +32,11 @@ const ItemCountButton = ({ index, isInCart, setIsInCart }) => {
   };
 
   return (
-    <div>
-      {isInCart ? (
-        <>
-          <button onClick={() => countDown(index)}>-</button>
-          <span>{selectedItems.find((item) => item.id === index).count}</span>
-          <button onClick={() => countUp(index)}>+</button>
-        </>
-      ) : (
-        <button onClick={() => addItem(index)}>Add to Cart</button>
-      )}
-    </div>
+    <>
+      <button onClick={() => countDown(index)}>-</button>
+      <span>{selectedItems.find((item) => item.id === index).count}</span>
+      <button onClick={() => countUp(index)}>+</button>
+    </>
   );
 };
 
