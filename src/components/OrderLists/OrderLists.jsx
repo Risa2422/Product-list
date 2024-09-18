@@ -27,7 +27,7 @@ const OrderLists = ({ isConfirm }) => {
             <div>{item.name}</div>
             <div>{item.count}x</div>
             <div>@${item.price}</div>
-            <div>{item.total()}</div>
+            <div>${item.total()}</div>
             {isConfirm ? (
               ""
             ) : (
