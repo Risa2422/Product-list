@@ -5,7 +5,7 @@ const AddItemButton = ({ index, data }) => {
   const { selectedItems, setSelectedItems, isInCart, setIsInCart } =
     useContext(MyContext);
 
-  const addItem = (index) => {
+  const addItem = (index) => { // Normally if we are doing a click event, we name the function as handleAdditem() or handleAdd()
     const obj = {
       id: index,
       name: data.name,
