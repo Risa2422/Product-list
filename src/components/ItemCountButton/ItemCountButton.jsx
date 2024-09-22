@@ -3,8 +3,7 @@ import { ProductContext } from "../../App";
 import styles from "./ItemCountButton.module.css";
 
 const ItemCountButton = ({ index }) => {
-  const { selectedItems, setSelectedItems, isInCart, setIsInCart } =
-    useContext(ProductContext);
+  const { selectedItems, setSelectedItems } = useContext(ProductContext);
 
   // count up the item
   const countUp = (index) => {
@@ -19,13 +18,6 @@ const ItemCountButton = ({ index }) => {
   const countDown = (index) => {
     // if the count goes zero, the text of the button will change.
     const currentCount = selectedItems.find((item) => item.id === index);
-    if (currentCount.count === 1) {
-      setIsInCart((isInCart) => ({
-        ...isInCart,
-        [index]: false,
-      }));
-    }
-
     const updatedItems = selectedItems
       .map((item) =>
         item.id === index ? { ...item, count: item.count - 1 } : item

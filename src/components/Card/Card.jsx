@@ -5,8 +5,7 @@ import AddItemButton from "../AddItemButton/AddItemButton";
 import { ProductContext } from "../../App";
 
 const Card = ({ index, data }) => {
-  const { isInCart } = useContext(ProductContext);
-
+  const { selectedItems } = useContext(ProductContext);
   return (
     <div className={styles.card_container}>
       <div className={styles.card_image}>
@@ -14,7 +13,7 @@ const Card = ({ index, data }) => {
           {/* Elmer : images don't apply */}
           <img src="../assets/images/image-baklava-desktop.jpg" alt="" />
         </div>
-        {isInCart[index] ? (
+        {selectedItems.some((item) => item.id === index) ? (
           <ItemCountButton index={index} />
         ) : (
           <AddItemButton index={index} data={data} />
