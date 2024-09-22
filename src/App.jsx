@@ -2,7 +2,7 @@ import { useState, createContext } from "react";
 import "./App.css";
 import CardLists from "./components/CardLists/CardLists";
 import Cart from "./components/Cart/Cart";
-export const MyContext = createContext();
+export const ProductContext = createContext();
 
 function App() {
   const [selectedItems, setSelectedItems] = useState([]);
@@ -20,12 +20,12 @@ function App() {
 
   return (
     <>
-      <MyContext.Provider
+      <ProductContext.Provider
         value={{ selectedItems, setSelectedItems, isInCart, setIsInCart }}
       >
         <CardLists />
         <Cart />
-      </MyContext.Provider>
+      </ProductContext.Provider>
     </>
   );
 }

@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import ItemInfo from "../ItemInfo/ItemInfo";
-import { MyContext } from "../../App";
+import { ProductContext } from "../../App";
 import styles from "./Cart.module.css";
 
 const Cart = () => {
-  const { selectedItems } = useContext(MyContext);
+  const { selectedItems } = useContext(ProductContext);
   let totalCount = 0;
 
   selectedItems.forEach((item) => {

@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import { MyContext } from "../../App";
+import { ProductContext } from "../../App";
 
 const AddItemButton = ({ index, data }) => {
   const { selectedItems, setSelectedItems, isInCart, setIsInCart } =
-    useContext(MyContext);
+    useContext(ProductContext);
 
-  const addItem = (index) => {
+  const handleAddItem = (index) => {
     const obj = {
       id: index,
       name: data.name,
@@ -26,7 +26,7 @@ const AddItemButton = ({ index, data }) => {
   return (
     <button
       onClick={() => {
-        addItem(index);
+        handleAddItem(index);
       }}
     >
       Add to Cart

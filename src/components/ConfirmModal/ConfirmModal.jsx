@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import OrderLists from "../OrderLists/OrderLists";
-import { MyContext } from "../../App";
+import { ProductContext } from "../../App";
 import styles from "./ConfirmModal.module.css";
 
 const ConfirmModal = () => {
-  const { selectedItems, setSelectedItems, isInCart, setIsInCart } =
-    useContext(MyContext);
+  const {  isInCart } =
+    useContext(ProductContext);
 
   const resetOrder = () => {
     setSelectedItems([]);

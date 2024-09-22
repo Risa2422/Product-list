@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
-import { MyContext } from "../../App";
+import { ProductContext } from "../../App";
 import styles from "./ItemCountButton.module.css";
 
 const ItemCountButton = ({ index }) => {
   const { selectedItems, setSelectedItems, isInCart, setIsInCart } =
-    useContext(MyContext);
+    useContext(ProductContext);
 
   // count up the item
   const countUp = (index) => {

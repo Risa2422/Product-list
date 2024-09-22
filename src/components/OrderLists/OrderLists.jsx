@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { MyContext } from "../../App";
+import { ProductContext } from "../../App";
 
 const OrderLists = ({ isConfirm }) => {
   const { selectedItems, setSelectedItems, isInCart, setIsInCart } =
-    useContext(MyContext);
+    useContext(ProductContext);
   const orderTotal = selectedItems.reduce(
     (total, item) => total + item.price * item.count,
     0

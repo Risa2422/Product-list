@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { MyContext } from "../../App";
+import { ProductContext } from "../../App";
 import OrderLists from "../OrderLists/OrderLists";
 import ConfirmButton from "../ConfirmButton/ConfirmButton";
 
 const ItemInfo = () => {
-  const { selectedItems, setSelectedItems } = useContext(MyContext);
+  const { selectedItems, setSelectedItems } = useContext(ProductContext);
 
   return (
     <div>
