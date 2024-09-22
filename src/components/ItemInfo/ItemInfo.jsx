@@ -4,7 +4,7 @@ import OrderLists from "../OrderLists/OrderLists";
 import ConfirmModal from "../ConfirmModal/ConfirmModal";
 
 const ItemInfo = () => {
-  const { selectedItems, setSelectedItems } = useContext(ProductContext);
+  const { selectedItems } = useContext(ProductContext);
   const [showOrderLists, setShowOrderLists] = useState(false);
 
   const handleClick = () => {

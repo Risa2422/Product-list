@@ -4,6 +4,7 @@ import ProductContext from "../../context/ProductContext";
 import styles from "./ConfirmModal.module.css";
 
 const ConfirmModal = () => {
+  const { setSelectedItems } = useContext(ProductContext);
   const resetOrder = () => {
     setSelectedItems([]);
   };
