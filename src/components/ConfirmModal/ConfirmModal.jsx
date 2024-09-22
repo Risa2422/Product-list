@@ -3,18 +3,29 @@ import OrderLists from "../OrderLists/OrderLists";
 import ProductContext from "../../context/ProductContext";
 import styles from "./ConfirmModal.module.css";
 
-const ConfirmModal = () => {
+const ConfirmModal = ({ showOrderLists, setShowOrderLists }) => {
   const { setSelectedItems } = useContext(ProductContext);
   const resetOrder = () => {
     setSelectedItems([]);
+    setShowOrderLists((showOrderLists) => !showOrderLists);
   };
 
   return (
-    <div className={styles.confirmModal_container}>
-      <h2>Order Confirmed</h2>
-      <p>We hope you enjoy your food!</p>
-      <OrderLists isConfirm={true} />
-      <button onClick={resetOrder}>Start New Order</button>
+    <div className="fixed left-0 top-0 w-full h-full bg-custom-red overflow-hidden">
+      <div className="absolute left-0 top-20 bg-white w-full h-[90vh] rounded-lg p-5 overflow-auto">
+        <div className="my-2">
+          <img src="../../assets/images/icon-order-confirmed.svg" alt="" />
+        </div>
+        <h2 className="text-4xl py-3 font-bold w-1/2">Order Confirmed</h2>
+        <p className="mb-5 text-custom-color3">We hope you enjoy your food!</p>
+        <OrderLists isConfirm={true} />
+        <button
+          onClick={resetOrder}
+          className="bg-custom-color6 text-white my-5 p-3 w-full rounded-full"
+        >
+          Start New Order
+        </button>
+      </div>
     </div>
   );
 };

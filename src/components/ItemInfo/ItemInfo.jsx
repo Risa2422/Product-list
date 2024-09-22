@@ -43,7 +43,12 @@ const ItemInfo = () => {
           >
             Confirm Order
           </button>
-          {showOrderLists && <ConfirmModal />}
+          {showOrderLists && (
+            <ConfirmModal
+              showOrderLists={showOrderLists}
+              setShowOrderLists={setShowOrderLists}
+            />
+          )}
         </>
       )}
     </div>
