@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import OrderLists from "../OrderLists/OrderLists";
-import { ProductContext } from "../../App";
+import ProductContext from "../../context/ProductContext";
 import styles from "./ConfirmModal.module.css";
 
 const ConfirmModal = () => {

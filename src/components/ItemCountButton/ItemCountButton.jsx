@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { ProductContext } from "../../App";
+import ProductContext from "../../context/ProductContext";
 import styles from "./ItemCountButton.module.css";
 
 const ItemCountButton = ({ index }) => {

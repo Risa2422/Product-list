@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ProductContext } from "../../App";
+import ProductContext from "../../context/ProductContext";
 
 const OrderLists = ({ isConfirm }) => {
   const { selectedItems, setSelectedItems } = useContext(ProductContext);
