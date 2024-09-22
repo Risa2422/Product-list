@@ -28,11 +28,25 @@ const ItemCountButton = ({ index }) => {
   };
 
   return (
-    <>
-      <button onClick={() => countDown(index)}>-</button>
-      <span>{selectedItems.find((item) => item.id === index).count}</span>
-      <button onClick={() => countUp(index)}>+</button>
-    </>
+    <button className="flex justify-between items-center absolute -bottom-5 left-1/2 translate-x-[-50%] rounded-full px-6 p-2 border border-custom-color3 text-custom-color5 w-1/2 bg-custom-color6">
+      <button onClick={() => countDown(index)} className="text-white">
+        <img
+          src="../../assets/images/icon-decrement-quantity.svg"
+          alt=""
+          className="mr-2"
+        />
+      </button>
+      <span className="text-white">
+        {selectedItems.find((item) => item.id === index).count}
+      </span>
+      <button onClick={() => countUp(index)}>
+        <img
+          src="../../assets/images/icon-increment-quantity.svg"
+          alt=""
+          className="mr-2"
+        />
+      </button>
+    </button>
   );
 };
 
