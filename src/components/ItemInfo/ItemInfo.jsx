@@ -12,7 +12,7 @@ const ItemInfo = () => {
   };
 
   return (
-    <div className="m-4 mt-0 py-4 px-6 bg-white">
+    <div className="bg-white">
       {selectedItems.length === 0 ? (
         <div className="flex flex-col items-center">
           <div>
@@ -22,27 +22,29 @@ const ItemInfo = () => {
               className="w-full"
             />
           </div>
-          <p className="text-custom-color4">
+          <p className="pb-3 text-custom-color4">
             Your added items will appear here
           </p>
         </div>
       ) : (
         <>
           <OrderLists isConfirm={false} />
-          <div className="flex items-center justify-center rounded-sm p-4 bg-custom-color gap-1">
-            <img src="../../assets/images/icon-carbon-neutral.svg" alt="" />
-            This is a{" "}
-            <span className="text-custom-color5 font-medium">
-              carbon-neutral
-            </span>{" "}
-            delivery
+          <div className="flex flex-col items-center">
+            <div className="flex items-center justify-center rounded-sm py-3  w-5/6 bg-custom-color gap-1">
+              <img src="../../assets/images/icon-carbon-neutral.svg" alt="" />
+              This is a
+              <span className="text-custom-color5 font-medium">
+                carbon-neutral
+              </span>
+              delivery
+            </div>
+            <button
+              onClick={handleClick}
+              className=" bg-custom-color6 text-white my-4 p-3 w-5/6 rounded-full"
+            >
+              Confirm Order
+            </button>
           </div>
-          <button
-            onClick={handleClick}
-            className="bg-custom-color6 text-white my-5 p-3 w-full rounded-full"
-          >
-            Confirm Order
-          </button>
           {showOrderLists && (
             <ConfirmModal
               showOrderLists={showOrderLists}

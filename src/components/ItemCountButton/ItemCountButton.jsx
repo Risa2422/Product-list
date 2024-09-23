@@ -28,7 +28,7 @@ const ItemCountButton = ({ index }) => {
   };
 
   return (
-    <button className="flex justify-between items-center absolute -bottom-5 left-1/2 translate-x-[-50%] rounded-full p-2 border border-custom-color3 text-custom-color5 w-1/2 bg-custom-color6">
+    <div className="flex justify-between items-center absolute -bottom-5 left-1/2 translate-x-[-50%] rounded-full p-2 border border-custom-color3 text-custom-color5 w-2/3 bg-custom-color6">
       <button onClick={() => countDown(index)} className="text-white">
         <img
           src="../../assets/images/icon-decrement-quantity.svg"
@@ -46,7 +46,7 @@ const ItemCountButton = ({ index }) => {
           className="mr-2"
         />
       </button>
-    </button>
+    </div>
   );
 };
 

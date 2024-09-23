@@ -8,7 +8,7 @@ const Card = ({ index, data }) => {
   const { selectedItems } = useContext(ProductContext);
   return (
     <div className="m-2">
-      <div className="flex ">
+      <div className="flex">
         <div className="relative">
           <img
             src={`../../public/${data.image.mobile}`}
@@ -22,12 +22,10 @@ const Card = ({ index, data }) => {
           )}
         </div>
       </div>
-      <div className="my-5">
+      <div className="mt-7">
         <div className="text-custom-color2 text-sm">{data.category}</div>
-        <div className="text-custom-color5  text-md font-medium">
-          {data.name}
-        </div>
-        <div className="text-custom-color4 text-md">${data.price}</div>
+        <div className="text-custom-color5 font-semibold">{data.name}</div>
+        <div className="text-custom-color6 font-bold">${data.price}</div>
       </div>
     </div>
   );

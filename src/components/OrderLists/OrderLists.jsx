@@ -49,7 +49,7 @@ const OrderLists = ({ isConfirm }) => {
               </div>
             </div>
             {isConfirm ? (
-              <div className="text-custom-color5 font-medium">
+              <div className="text-custom-color5 font-bold">
                 ${item.total()}
               </div>
             ) : (
@@ -63,7 +63,7 @@ const OrderLists = ({ isConfirm }) => {
           </li>
         ))}
       </ul>
-      <div className="flex justify-between items-center my-3">
+      <div className="flex justify-between items-center mt-4">
         <p className=" text-custom-color4 ">Order Total</p>
         <p className="text-2xl font-bold">${orderTotal}</p>
       </div>

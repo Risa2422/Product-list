@@ -9,8 +9,10 @@ function App() {
   return (
     <>
       <ProductContextProvider>
-        <CardLists />
-        <Cart />
+        <div className="flex flex-col md:flex-row p-9 bg-custom-color">
+          <CardLists />
+          <Cart />
+        </div>
       </ProductContextProvider>
     </>
   );
