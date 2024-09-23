@@ -18,7 +18,7 @@ const ItemInfo = () => {
           <div>
             <img
               src="../../assets/images/illustration-empty-cart.svg"
-              alt=""
+              alt="image of empty cart"
               className="w-full"
             />
           </div>

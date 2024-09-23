@@ -28,7 +28,7 @@ const AddItemButton = ({ index, data }) => {
     >
       <img
         src="../../assets/images/icon-add-to-cart.svg"
-        alt=""
+        alt="icon adding to cart"
         className="mr-2"
       />
       Add to Cart

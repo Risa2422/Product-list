@@ -11,7 +11,7 @@ const Card = ({ index, data }) => {
         <div className="relative">
           <img
             src={`../../public/${data.image.mobile}`}
-            alt=""
+            alt="image of dessert"
             className="rounded-md max-w-[21rem] md:w-full object-cover"
           />
           {selectedItems.some((item) => item.id === index) ? (

@@ -31,7 +31,7 @@ const ItemCountButton = ({ index }) => {
       <button onClick={() => countDown(index)} className="text-white">
         <img
           src="../../assets/images/icon-decrement-quantity.svg"
-          alt=""
+          alt="icon decrement"
           className="mr-2"
         />
       </button>
@@ -41,7 +41,7 @@ const ItemCountButton = ({ index }) => {
       <button onClick={() => countUp(index)}>
         <img
           src="../../assets/images/icon-increment-quantity.svg"
-          alt=""
+          alt="icon increment"
           className="mr-2"
         />
       </button>

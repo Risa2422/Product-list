@@ -29,7 +29,7 @@ const OrderLists = ({ isConfirm }) => {
                   <img
                     src={`../../public/${item.image}`}
                     className="w-full h-full object-cover"
-                    alt=""
+                    alt="image of dessert"
                   />
                 </div>
               ) : (
@@ -63,7 +63,7 @@ const OrderLists = ({ isConfirm }) => {
                 onClick={() => deleteItem(item.id)}
                 className="flex justify-center items-center border border-custom-color-clamShell rounded-full flex-custom-20 h-5"
               >
-                <img src="../../assets/images/icon-remove-item.svg" alt="" />
+                <img src="../../assets/images/icon-remove-item.svg" alt="icon remove item" />
               </button>
             )}
           </li>
