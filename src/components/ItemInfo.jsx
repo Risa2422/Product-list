@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
-import ProductContext from "../../context/ProductContext";
-import OrderLists from "../OrderLists/OrderLists";
-import ConfirmModal from "../ConfirmModal/ConfirmModal";
+import ProductContext from "../context/ProductContext";
+import OrderLists from "./OrderLists";
+import ConfirmModal from "./ConfirmModal";
 
 const ItemInfo = () => {
   const { selectedItems } = useContext(ProductContext);

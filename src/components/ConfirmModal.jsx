@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import OrderLists from "../OrderLists/OrderLists";
-import ProductContext from "../../context/ProductContext";
+import OrderLists from "./OrderLists";
+import ProductContext from "../context/ProductContext";
 
 const ConfirmModal = ({ showOrderLists, setShowOrderLists }) => {
   const { setSelectedItems } = useContext(ProductContext);

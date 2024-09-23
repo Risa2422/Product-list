@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
-import ItemCountButton from "../ItemCountButton/ItemCountButton";
-import AddItemButton from "../AddItemButton/AddItemButton";
-import ProductContext from "../../context/ProductContext";
+import ItemCountButton from "./ItemCountButton";
+import AddItemButton from "./AddItemButton";
+import ProductContext from "../context/ProductContext";
 
 const Card = ({ index, data }) => {
   const { selectedItems } = useContext(ProductContext);

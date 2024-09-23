@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import ProductContext from "../../context/ProductContext";
+import ProductContext from "../context/ProductContext";
 
 const ItemCountButton = ({ index }) => {
   const { selectedItems, setSelectedItems } = useContext(ProductContext);
