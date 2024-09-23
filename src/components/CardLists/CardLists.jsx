@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "../Card/Card";
 import myData from "../../../public/data.json";
-import styles from "./CardLists.module.css";
 
 const CardLists = () => {
   return (
