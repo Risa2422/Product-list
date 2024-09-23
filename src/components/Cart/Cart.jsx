@@ -12,8 +12,8 @@ const Cart = () => {
   });
 
   return (
-    <div className="w-full md:w-1/3 bg-custom-colo">
-      <h2 className="mt-4 p-4 text-custom-color6 font-bold text-xl bg-white">
+    <div className="w-full md:w-1/4 flex-shrink-0 bg-custom-colo">
+      <h2 className="mt-4 p-4 text-custom-color-tiaMaria font-bold text-xl bg-white">
         Your Cart ({totalCount})
       </h2>
       <ItemInfo />

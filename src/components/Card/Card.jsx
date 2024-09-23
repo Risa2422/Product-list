@@ -13,7 +13,7 @@ const Card = ({ index, data }) => {
           <img
             src={`../../public/${data.image.mobile}`}
             alt=""
-            className="rounded-md"
+            className="rounded-md max-w-[21rem] md:w-full object-cover"
           />
           {selectedItems.some((item) => item.id === index) ? (
             <ItemCountButton index={index} />
@@ -23,9 +23,15 @@ const Card = ({ index, data }) => {
         </div>
       </div>
       <div className="mt-7">
-        <div className="text-custom-color2 text-sm">{data.category}</div>
-        <div className="text-custom-color5 font-semibold">{data.name}</div>
-        <div className="text-custom-color6 font-bold">${data.price}</div>
+        <div className="text-custom-color-clamShell text-sm">
+          {data.category}
+        </div>
+        <div className="text-custom-color-graphite font-semibold">
+          {data.name}
+        </div>
+        <div className="text-custom-color-tiaMaria font-bold">
+          ${data.price}
+        </div>
       </div>
     </div>
   );

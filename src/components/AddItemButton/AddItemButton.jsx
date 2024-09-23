@@ -21,7 +21,7 @@ const AddItemButton = ({ index, data }) => {
 
   return (
     <button
-      className="absolute -bottom-5 left-1/2 translate-x-[-50%] rounded-full  bg-white p-2 border border-custom-color3 text-custom-color5 w-2/3 flex items-center justify-center"
+      className="absolute -bottom-5 left-1/2 translate-x-[-50%] rounded-full  bg-white p-2 border border-custom-color-pharlap text-custom-color-graphite w-2/3 flex items-center justify-center"
       onClick={() => {
         handleAddItem(index);
       }}

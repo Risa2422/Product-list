@@ -22,7 +22,7 @@ const ItemInfo = () => {
               className="w-full"
             />
           </div>
-          <p className="pb-3 text-custom-color4">
+          <p className="pb-3 text-custom-color-beaver">
             Your added items will appear here
           </p>
         </div>
@@ -30,17 +30,17 @@ const ItemInfo = () => {
         <>
           <OrderLists isConfirm={false} />
           <div className="flex flex-col items-center">
-            <div className="flex items-center justify-center rounded-sm py-3  w-5/6 bg-custom-color gap-1">
+            <div className="flex items-center justify-center rounded-sm py-3  w-5/6 bg-custom-color-fantasy gap-1">
               <img src="../../assets/images/icon-carbon-neutral.svg" alt="" />
               This is a
-              <span className="text-custom-color5 font-medium">
+              <span className="text-custom-color-graphite font-medium">
                 carbon-neutral
               </span>
               delivery
             </div>
             <button
               onClick={handleClick}
-              className=" bg-custom-color6 text-white my-4 p-3 w-5/6 rounded-full"
+              className=" bg-custom-color-tiaMaria text-white my-4 p-3 w-5/6 rounded-full"
             >
               Confirm Order
             </button>
