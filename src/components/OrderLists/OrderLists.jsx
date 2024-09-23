@@ -14,30 +14,38 @@ const OrderLists = ({ isConfirm }) => {
   }
 
   return (
-    <div className={`mt-3 p-4 ${isConfirm ? "bg-custom-color" : "bg-white"}`}>
+    <div className={`p-4 ${isConfirm ? "bg-custom-color" : "bg-white"}`}>
       <ul className={`rounded-sm ${isConfirm ? "bg-custom-color" : ""}`}>
         {selectedItems.map((item) => (
           <li
             key={item.id}
             className="flex justify-between border-b pt-2 pb-2 items-center"
           >
-            <div className="flex flex-col">
+            <div className="flex gap-2">
               {isConfirm ? (
-                <div>
-                  <img src="" alt="" />
+                <div className="flex-custom30 h-12">
+                  <img
+                    src={`../../public/${item.image}`}
+                    className="w-full h-full object-cover"
+                    alt=""
+                  />
                 </div>
               ) : (
                 ""
               )}
-              <div className="text-custom-color5">{item.name}</div>
-              <div className="flex space-x-3 my-1">
-                <div className="text-custom-color6">{item.count}x</div>
-                <div className="pl-1 text-custom-color2">@${item.price}</div>
-                {isConfirm ? (
-                  ""
-                ) : (
-                  <div className="text-custom-color3">${item.total()}</div>
-                )}
+              <div className="flex flex-col">
+                <div className="text-custom-color5">{item.name}</div>
+                <div className="flex space-x-3 my-1">
+                  <div className="text-custom-color6 font-bold">
+                    {item.count}x
+                  </div>
+                  <div className="pl-1 text-custom-color2">@${item.price}</div>
+                  {isConfirm ? (
+                    ""
+                  ) : (
+                    <div className="text-custom-color3">${item.total()}</div>
+                  )}
+                </div>
               </div>
             </div>
             {isConfirm ? (

@@ -12,7 +12,7 @@ const ConfirmModal = ({ showOrderLists, setShowOrderLists }) => {
 
   return (
     <div className="fixed left-0 top-0 w-full h-full bg-custom-red overflow-hidden">
-      <div className="absolute left-0 top-20 bg-white w-full h-[90vh] rounded-lg p-5 overflow-auto">
+      <div className="absolute left-0 top-20 md:top-1/2 md:left-1/2 md:translate-x-[-50%] md:translate-y-[-50%] bg-white w-full h-[90vh] md:h-[70vh] md:w-2/6 rounded-lg p-5 overflow-auto">
         <div className="my-2">
           <img src="../../assets/images/icon-order-confirmed.svg" alt="" />
         </div>
